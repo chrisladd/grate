@@ -10,8 +10,31 @@ import Foundation
 import AVFoundation
 
 struct BufferPack {
+    
+    /**
+     An array of buffers
+     */
     let buffers: [AVAudioPCMBuffer]
+    
+    /**
+     The length of each buffer
+     */
     let bufferLength: Int
+    
+    /**
+     The label you expect to attach to output
+     */
+    let expectedLabel: String
+    
+    /**
+     The original path of the source file
+     */
+    let sourcePath: String
+    
+    func filename() -> String {
+        guard let url = URL(string: sourcePath) else { return "unknown" }
+        return url.deletingPathExtension().lastPathComponent
+    }
 }
 
 struct BufferPackager {
@@ -25,17 +48,10 @@ struct BufferPackager {
             return paths
         }
         
-        var prependable = path
-        if let last = path.last {
-            if last != "/" {
-                prependable += "/"
-            }
-        }
-        
         if let subpaths = try? fm.contentsOfDirectory(atPath: path) {
             for sub in subpaths {
                 if sub.localizedCaseInsensitiveContains("." + fileExtension) {
-                    paths.append(prependable.appending(sub))
+                    paths.append(path.appending(sub))
                 }
             }
         }
@@ -43,16 +59,70 @@ struct BufferPackager {
         return paths
     }
     
-    func bufferForFile(path: String, bufferLength: Int) -> BufferPack? {
+    func bufferForFile(path: String, bufferLength: Int, label: String) -> BufferPack? {
         guard let buffers = AVAudioPCMBuffer.buffersForFileAtPath(path, bufferLength: bufferLength) else {
             return nil
         }
         
         return BufferPack(buffers: buffers,
-                          bufferLength: bufferLength)
+                          bufferLength: bufferLength,
+                          expectedLabel: label,
+                          sourcePath: path)
     }
     
-    func writePackToFile(pack: BufferPack, dir: String) {
+    // MARK: - Writing to Disk
+    
+    
+
+    // expectedlabel__filename__sampleindex.buffer
+    // c-major__c01_aif__3.buffer
+    func filenameFor(buffer: AVAudioPCMBuffer, pack: BufferPack, index: Int) -> String {
+        let expectedLabel = pack.expectedLabel
+        let sourceFilename = pack.filename()
+        let sampleIndex = index
+        let sampleRate = buffer.format.sampleRate
+        
+        return "\(expectedLabel)__\(sourceFilename)__\(String(sampleIndex))__\(String(Int(sampleRate)))"
+    }
+
+//    func writeSamplesTo(directory: String, samples: [MLChordSample]) {
+//        for sample in samples {
+//            let buffer = sample.buffer
+//            let data = Data(buffer:buffer, time: AVAudioTime.init(sampleTime: AVAudioFramePosition(0), atRate: buffer.format.sampleRate))
+//            let filename = filenameForSample(expectedLabel: sample.expectedLabel, sourceFilename: sample.filename, sampleIndex: sample.index, sampleRate: buffer.format.sampleRate)
+//
+//            let bufferPath = directory + "/" + filename + ".buffer"
+//            let bufferURL = URL(fileURLWithPath: bufferPath)
+//
+//            do {
+//                try data.write(to: bufferURL)
+//            }
+//            catch {
+//                print("Unable to write \(bufferPath) to file")
+//            }
+//        }
+//    }
+
+    
+    func createDirectoryIfNecessary(_ dir: String) {
+        guard !FileManager.default.fileExists(atPath: dir, isDirectory: nil) else {
+            return
+        }
+        
+        try? FileManager.default.createDirectory(atPath: dir, withIntermediateDirectories: true, attributes: nil)
+    }
+    
+    
+    
+    func writePack(pack: BufferPack, toDir dir: String) {
         // create the directory if needed
+        createDirectoryIfNecessary(dir)
+        
+        // now write each buffer to that directory
+        for (idx, buffer) in pack.buffers.enumerated() {
+            let filename = filenameFor(buffer: buffer, pack: pack, index: idx)
+            print(filename)
+        }
+        
     }
 }

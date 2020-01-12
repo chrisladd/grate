@@ -79,6 +79,25 @@ struct FlagParser {
     func stringForFlag(_ flag: Flag, args: [String]) -> String? {
         return stringForKey(flag.key, shortKey: flag.shortKey, args: args)
     }
+
+    func dirWithPath(_ path: String) -> String {
+        var dir = path
+        if let last = path.last {
+            if last != "/" {
+                dir += "/"
+            }
+        }
+        
+        return dir
+    }
+    
+    /**
+     Similar to `stringForFlag`, but ensures paths end in a trailing `/`
+     */
+    func dirForFlag(_ flag: Flag, args: [String]) -> String? {
+        guard let path = stringForFlag(flag, args: args) else { return nil }
+        return dirWithPath(path)
+    }
     
     func intForFlag(_ flag: Flag, args: [String]) -> Int? {
         guard let string = stringForFlag(flag, args: args) else { return nil }
