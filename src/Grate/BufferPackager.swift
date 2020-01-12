@@ -82,7 +82,7 @@ struct BufferPackager {
         let sampleIndex = index
         let sampleRate = buffer.format.sampleRate
         
-        return "\(expectedLabel)__\(sourceFilename)__\(String(sampleIndex))__\(String(Int(sampleRate)))"
+        return "\(expectedLabel)__\(sourceFilename)__\(String(sampleIndex))__\(String(Int(sampleRate))).buffer"
     }
 
 //    func writeSamplesTo(directory: String, samples: [MLChordSample]) {
@@ -121,7 +121,14 @@ struct BufferPackager {
         // now write each buffer to that directory
         for (idx, buffer) in pack.buffers.enumerated() {
             let filename = filenameFor(buffer: buffer, pack: pack, index: idx)
-            print(filename)
+            let url = URL(fileURLWithPath: dir + filename)
+            
+            let data = Data(buffer:buffer, time: AVAudioTime(sampleTime: AVAudioFramePosition(0), atRate: buffer.format.sampleRate))
+            
+            print("writing to \(url)")
+            try? data.write(to: url)
+            
+            
         }
         
     }
