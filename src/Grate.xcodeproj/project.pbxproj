@@ -28,7 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8E15FC5B23CAB2EE003F5C25 /* Grate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Grate; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E15FC5B23CAB2EE003F5C25 /* grate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = grate; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E15FC5E23CAB2EE003F5C25 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8E15FC6523CAB38C003F5C25 /* AVAudioPCMBuffer+Slices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAudioPCMBuffer+Slices.swift"; sourceTree = "<group>"; };
 		8E15FC6723CAB397003F5C25 /* Data+Buffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Buffers.swift"; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		8E15FC5C23CAB2EE003F5C25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E15FC5B23CAB2EE003F5C25 /* Grate */,
+				8E15FC5B23CAB2EE003F5C25 /* grate */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,9 +80,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8E15FC5A23CAB2EE003F5C25 /* Grate */ = {
+		8E15FC5A23CAB2EE003F5C25 /* grate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E15FC6223CAB2EE003F5C25 /* Build configuration list for PBXNativeTarget "Grate" */;
+			buildConfigurationList = 8E15FC6223CAB2EE003F5C25 /* Build configuration list for PBXNativeTarget "grate" */;
 			buildPhases = (
 				8E15FC5723CAB2EE003F5C25 /* Sources */,
 				8E15FC5823CAB2EE003F5C25 /* Frameworks */,
@@ -92,9 +92,9 @@
 			);
 			dependencies = (
 			);
-			name = Grate;
+			name = grate;
 			productName = Grate;
-			productReference = 8E15FC5B23CAB2EE003F5C25 /* Grate */;
+			productReference = 8E15FC5B23CAB2EE003F5C25 /* grate */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -125,7 +125,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8E15FC5A23CAB2EE003F5C25 /* Grate */,
+				8E15FC5A23CAB2EE003F5C25 /* grate */,
 			);
 		};
 /* End PBXProject section */
@@ -294,7 +294,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8E15FC6223CAB2EE003F5C25 /* Build configuration list for PBXNativeTarget "Grate" */ = {
+		8E15FC6223CAB2EE003F5C25 /* Build configuration list for PBXNativeTarget "grate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E15FC6323CAB2EE003F5C25 /* Debug */,

@@ -4,6 +4,8 @@ Grate helps slice up audio files into test buffers.
 
 ## Usage
 
+Copy the binary from the `bin` folder of this project to `/usr/local/bin`. Then:
+
 ```
 grate INPUT_DIR OUTPUT_DIR -s 4096 -l single-a
 ```

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8E15FC5A23CAB2EE003F5C25"
-               BuildableName = "Grate"
-               BlueprintName = "Grate"
+               BuildableName = "grate"
+               BlueprintName = "grate"
                ReferencedContainer = "container:Grate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E15FC5A23CAB2EE003F5C25"
-            BuildableName = "Grate"
-            BlueprintName = "Grate"
+            BuildableName = "grate"
+            BlueprintName = "grate"
             ReferencedContainer = "container:Grate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -68,8 +68,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E15FC5A23CAB2EE003F5C25"
-            BuildableName = "Grate"
-            BlueprintName = "Grate"
+            BuildableName = "grate"
+            BlueprintName = "grate"
             ReferencedContainer = "container:Grate.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
