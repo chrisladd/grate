@@ -14,6 +14,8 @@ let inputFlag = Flag(key: "input", shortKey: "i", description: "The location whe
 let outputFlag = Flag(key: "output", shortKey: "o", description: "The location where audio should be saved to. Can be the second argument.")
 let sizeFlag = Flag(key: "size", shortKey: "s", description: "The size of buffers cut from the audio file. Should be a power of 2. Defaults to \(DEFAULT_BUFFER_LENGTH)")
 let labelFlag = Flag(key: "label", shortKey: "l", description: "The expected label to be represented by the data")
+let chromaFlag = Flag(key: "chroma", shortKey: "c", description: "A path to export jpgs of a chromagram from FFT bins")
+
 
 func showHelp() {
     print("\nGrate helps slice up audio files into test buffers.\n")
@@ -21,6 +23,7 @@ func showHelp() {
     print(outputFlag.message())
     print(labelFlag.message())
     print(sizeFlag.message())
+    print(chromaFlag.message())
     print("")
 }
 
@@ -30,6 +33,8 @@ let packager = BufferPackager()
 if parser.boolForKey("help", shortKey: "h", args: CommandLine.arguments) {
     showHelp()
 }
+
+let chromaPath = parser.dirForFlag(chromaFlag, args: CommandLine.arguments)
 
 var outputIdx = 1
 var input = parser.dirForFlag(inputFlag, args: CommandLine.arguments)
@@ -97,5 +102,8 @@ for path in paths {
     print("Got \(pack.buffers.count) buffers for \(path.split(separator: "/").last!)")
     packager.writePack(pack: pack, toDir: output)
     
-    
+    if let chromaPath = chromaPath {
+        let writer = ChromagramWriter()
+        writer.writeChromagramForPack(pack, to: chromaPath)
+    }
 }

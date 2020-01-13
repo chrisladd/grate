@@ -13,6 +13,10 @@
 		8E15FC6A23CAC1DF003F5C25 /* FlagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E15FC6923CAC1DF003F5C25 /* FlagParser.swift */; };
 		8E15FC6C23CAC209003F5C25 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E15FC6B23CAC209003F5C25 /* Flag.swift */; };
 		8E15FC6E23CAC63B003F5C25 /* BufferPackager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E15FC6D23CAC63A003F5C25 /* BufferPackager.swift */; };
+		8E25EBF523CBF93D004D859D /* FFTBin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25EBF423CBF93D004D859D /* FFTBin.swift */; };
+		8E25EBF723CBF94A004D859D /* ChromagramWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25EBF623CBF94A004D859D /* ChromagramWriter.swift */; };
+		8E25EBF923CBF964004D859D /* TempiFFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25EBF823CBF963004D859D /* TempiFFT.swift */; };
+		8E25EBFD23CBF97F004D859D /* PLPPitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E25EBFB23CBF97F004D859D /* PLPPitch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +39,12 @@
 		8E15FC6923CAC1DF003F5C25 /* FlagParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagParser.swift; sourceTree = "<group>"; };
 		8E15FC6B23CAC209003F5C25 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 		8E15FC6D23CAC63A003F5C25 /* BufferPackager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferPackager.swift; sourceTree = "<group>"; };
+		8E25EBF423CBF93D004D859D /* FFTBin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTBin.swift; sourceTree = "<group>"; };
+		8E25EBF623CBF94A004D859D /* ChromagramWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromagramWriter.swift; sourceTree = "<group>"; };
+		8E25EBF823CBF963004D859D /* TempiFFT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempiFFT.swift; sourceTree = "<group>"; };
+		8E25EBFA23CBF97F004D859D /* grate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "grate-Bridging-Header.h"; sourceTree = "<group>"; };
+		8E25EBFB23CBF97F004D859D /* PLPPitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPPitch.m; sourceTree = "<group>"; };
+		8E25EBFC23CBF97F004D859D /* PLPPitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPPitch.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +83,22 @@
 				8E15FC6B23CAC209003F5C25 /* Flag.swift */,
 				8E15FC6523CAB38C003F5C25 /* AVAudioPCMBuffer+Slices.swift */,
 				8E15FC6723CAB397003F5C25 /* Data+Buffers.swift */,
+				8E25EC0223CBF9E6004D859D /* Visualization */,
+				8E25EBFA23CBF97F004D859D /* grate-Bridging-Header.h */,
 			);
 			path = Grate;
+			sourceTree = "<group>";
+		};
+		8E25EC0223CBF9E6004D859D /* Visualization */ = {
+			isa = PBXGroup;
+			children = (
+				8E25EBF623CBF94A004D859D /* ChromagramWriter.swift */,
+				8E25EBF423CBF93D004D859D /* FFTBin.swift */,
+				8E25EBF823CBF963004D859D /* TempiFFT.swift */,
+				8E25EBFC23CBF97F004D859D /* PLPPitch.h */,
+				8E25EBFB23CBF97F004D859D /* PLPPitch.m */,
+			);
+			path = Visualization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +133,7 @@
 				TargetAttributes = {
 					8E15FC5A23CAB2EE003F5C25 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -136,11 +161,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E15FC5F23CAB2EE003F5C25 /* main.swift in Sources */,
+				8E25EBF723CBF94A004D859D /* ChromagramWriter.swift in Sources */,
+				8E25EBF523CBF93D004D859D /* FFTBin.swift in Sources */,
 				8E15FC6823CAB397003F5C25 /* Data+Buffers.swift in Sources */,
+				8E25EBF923CBF964004D859D /* TempiFFT.swift in Sources */,
 				8E15FC6C23CAC209003F5C25 /* Flag.swift in Sources */,
 				8E15FC6A23CAC1DF003F5C25 /* FlagParser.swift in Sources */,
 				8E15FC6623CAB38C003F5C25 /* AVAudioPCMBuffer+Slices.swift in Sources */,
 				8E15FC6E23CAC63B003F5C25 /* BufferPackager.swift in Sources */,
+				8E25EBFD23CBF97F004D859D /* PLPPitch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,10 +292,18 @@
 		8E15FC6323CAB2EE003F5C25 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3NM52EUU5;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Grate/grate-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -274,10 +311,17 @@
 		8E15FC6423CAB2EE003F5C25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3NM52EUU5;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Grate/grate-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

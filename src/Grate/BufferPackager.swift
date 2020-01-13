@@ -35,6 +35,11 @@ struct BufferPack {
         guard let url = URL(string: sourcePath) else { return "unknown" }
         return url.deletingPathExtension().lastPathComponent
     }
+    
+    func sampleRate() -> Double {
+        guard let buffer = buffers.first else { return 0.0 }
+        return buffer.format.sampleRate
+    }
 }
 
 struct BufferPackager {
