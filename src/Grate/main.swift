@@ -104,6 +104,6 @@ for path in paths {
     
     if let chromaPath = chromaPath {
         let writer = ChromagramWriter()
-        writer.writeChromagramForPack(pack, to: chromaPath)
+        writer.writeChromagramForPack(pack, window:.hamming, to: chromaPath)
     }
 }
