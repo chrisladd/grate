@@ -18,4 +18,4 @@ grate INPUT_DIR OUTPUT_DIR -s 4096 -l single-a
 |--output |  -o | The location where audio should be saved to. Can be the second argument. |
 | --label | -l | The expected label to be represented by the data
 | --size  | -s | The size of buffers cut from the audio file. Should be a power of 2. Defaults to 2048 | 
-
+| --chroma | -c | An optional directory to output .jpg images of FFT chromagrams for each buffer |
