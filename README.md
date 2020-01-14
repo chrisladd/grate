@@ -1,5 +1,7 @@
 # Grate
 
+![Grate is a command line utility for slicing up audio](https://s3.amazonaws.com/xkdj3i2h/grater-k5dbpcra.jpg)
+
 Grate is a command line utility to slice up audio files into test buffers. You can use these buffers as fixtures to automate what would otherwise be difficult to test audio processing routines.
 
 To turn these buffers back into PCM buffers, see the [makePCMBuffer](https://github.com/chrisladd/grate/blob/master/src/Grate/Data%2BBuffers.swift) function.
