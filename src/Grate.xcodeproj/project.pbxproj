@@ -355,7 +355,7 @@
 			repositoryURL = "https://github.com/chrisladd/DashDashSwift/";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
+				minimumVersion = 0.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

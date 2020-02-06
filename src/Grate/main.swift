@@ -13,7 +13,7 @@ let DEFAULT_BUFFER_LENGTH = 2048
 
 let packager = BufferPackager()
 
-var parser = CommandLineParser()
+var parser = CommandLineParser(title: "Grate", description: "Grate helps slice up audio files into test buffers.")
 parser.arguments = CommandLine.arguments
 
 parser.register(key: "input",
