@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DashDashSwift",
+        "repositoryURL": "https://github.com/chrisladd/DashDashSwift/",
+        "state": {
+          "branch": null,
+          "revision": "6ef547237f6721ce892a10c8d54dae5365a35d4d",
+          "version": "0.3.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

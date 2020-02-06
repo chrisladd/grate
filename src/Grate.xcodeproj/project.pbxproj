@@ -3,20 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8E15FC5F23CAB2EE003F5C25 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E15FC5E23CAB2EE003F5C25 /* main.swift */; };
 		8E15FC6623CAB38C003F5C25 /* AVAudioPCMBuffer+Slices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E15FC6523CAB38C003F5C25 /* AVAudioPCMBuffer+Slices.swift */; };
 		8E15FC6823CAB397003F5C25 /* Data+Buffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E15FC6723CAB397003F5C25 /* Data+Buffers.swift */; };
-		8E15FC6A23CAC1DF003F5C25 /* FlagParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E15FC6923CAC1DF003F5C25 /* FlagParser.swift */; };
-		8E15FC6C23CAC209003F5C25 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E15FC6B23CAC209003F5C25 /* Flag.swift */; };
 		8E15FC6E23CAC63B003F5C25 /* BufferPackager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E15FC6D23CAC63A003F5C25 /* BufferPackager.swift */; };
 		8E25EBF523CBF93D004D859D /* FFTBin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25EBF423CBF93D004D859D /* FFTBin.swift */; };
 		8E25EBF723CBF94A004D859D /* ChromagramWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25EBF623CBF94A004D859D /* ChromagramWriter.swift */; };
 		8E25EBF923CBF964004D859D /* TempiFFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25EBF823CBF963004D859D /* TempiFFT.swift */; };
 		8E25EBFD23CBF97F004D859D /* PLPPitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E25EBFB23CBF97F004D859D /* PLPPitch.m */; };
+		8ED3219F23EC610F006A4C51 /* DashDashSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8ED3219E23EC610F006A4C51 /* DashDashSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,8 +35,6 @@
 		8E15FC5E23CAB2EE003F5C25 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8E15FC6523CAB38C003F5C25 /* AVAudioPCMBuffer+Slices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAudioPCMBuffer+Slices.swift"; sourceTree = "<group>"; };
 		8E15FC6723CAB397003F5C25 /* Data+Buffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Buffers.swift"; sourceTree = "<group>"; };
-		8E15FC6923CAC1DF003F5C25 /* FlagParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagParser.swift; sourceTree = "<group>"; };
-		8E15FC6B23CAC209003F5C25 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
 		8E15FC6D23CAC63A003F5C25 /* BufferPackager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferPackager.swift; sourceTree = "<group>"; };
 		8E25EBF423CBF93D004D859D /* FFTBin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTBin.swift; sourceTree = "<group>"; };
 		8E25EBF623CBF94A004D859D /* ChromagramWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromagramWriter.swift; sourceTree = "<group>"; };
@@ -52,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED3219F23EC610F006A4C51 /* DashDashSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,8 +77,6 @@
 			children = (
 				8E15FC5E23CAB2EE003F5C25 /* main.swift */,
 				8E15FC6D23CAC63A003F5C25 /* BufferPackager.swift */,
-				8E15FC6923CAC1DF003F5C25 /* FlagParser.swift */,
-				8E15FC6B23CAC209003F5C25 /* Flag.swift */,
 				8E15FC6523CAB38C003F5C25 /* AVAudioPCMBuffer+Slices.swift */,
 				8E15FC6723CAB397003F5C25 /* Data+Buffers.swift */,
 				8E25EC0223CBF9E6004D859D /* Visualization */,
@@ -117,6 +113,9 @@
 			dependencies = (
 			);
 			name = grate;
+			packageProductDependencies = (
+				8ED3219E23EC610F006A4C51 /* DashDashSwift */,
+			);
 			productName = Grate;
 			productReference = 8E15FC5B23CAB2EE003F5C25 /* grate */;
 			productType = "com.apple.product-type.tool";
@@ -146,6 +145,9 @@
 				Base,
 			);
 			mainGroup = 8E15FC5223CAB2EE003F5C25;
+			packageReferences = (
+				8ED3219D23EC610F006A4C51 /* XCRemoteSwiftPackageReference "DashDashSwift" */,
+			);
 			productRefGroup = 8E15FC5C23CAB2EE003F5C25 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -165,8 +167,6 @@
 				8E25EBF523CBF93D004D859D /* FFTBin.swift in Sources */,
 				8E15FC6823CAB397003F5C25 /* Data+Buffers.swift in Sources */,
 				8E25EBF923CBF964004D859D /* TempiFFT.swift in Sources */,
-				8E15FC6C23CAC209003F5C25 /* Flag.swift in Sources */,
-				8E15FC6A23CAC1DF003F5C25 /* FlagParser.swift in Sources */,
 				8E15FC6623CAB38C003F5C25 /* AVAudioPCMBuffer+Slices.swift in Sources */,
 				8E15FC6E23CAC63B003F5C25 /* BufferPackager.swift in Sources */,
 				8E25EBFD23CBF97F004D859D /* PLPPitch.m in Sources */,
@@ -348,6 +348,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8ED3219D23EC610F006A4C51 /* XCRemoteSwiftPackageReference "DashDashSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chrisladd/DashDashSwift/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8ED3219E23EC610F006A4C51 /* DashDashSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ED3219D23EC610F006A4C51 /* XCRemoteSwiftPackageReference "DashDashSwift" */;
+			productName = DashDashSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8E15FC5323CAB2EE003F5C25 /* Project object */;
 }
