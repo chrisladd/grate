@@ -69,7 +69,7 @@ public struct FFTBin {
         let fftFrameSize_2 = frameSize / 2
         let osamp = 4
         var resultBins = [DemoFFTBinResult]()
-        var fftBins = [DemoFFTBin]()
+        let fftBins = [DemoFFTBin]()
         
         var gLastPhase = [Double]()
         
@@ -131,10 +131,10 @@ public struct FFTBin {
         
         //        let lowE = Float(82.407)
         //        let highA = Float(440.00)
-        let lowC = Float(32.703) // Float(65.406)
-        let highF = Float(698.46)
-        let minFrequency = lowC
-        let maxFrequency =  highF
+//        let lowC = Float(32.703) // Float(65.406)
+//        let highF = Float(698.46)
+//        let minFrequency = lowC
+//        let maxFrequency =  highF
         
 //                fft.calculateLogarithmicBands(minFrequency: minFrequency, maxFrequency: maxFrequency, bandsPerOctave: 36)
         
